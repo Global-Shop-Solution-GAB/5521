@@ -1,0 +1,1378 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Display..Create
+Gui.F_Display..Caption("Inventory Dashboard")
+Gui.F_Display..Size(13560,10170)
+Gui.F_Display..MinX(0)
+Gui.F_Display..MinY(0)
+Gui.F_Display..Position(0,0)
+Gui.F_Display..BackColor(-2147483633)
+Gui.F_Display..MousePointer(0)
+Gui.F_Display..Event(UnLoad,F_Display_UnLoad)
+Gui.F_Display.frmSearch.Create(Frame)
+Gui.F_Display.frmSearch.Size(5070,1305)
+Gui.F_Display.frmSearch.Position(60,60)
+Gui.F_Display.lbl1.Create(Label,"Device Model",True,1095,255,0,60,225,True,2,"Arial",8,-2147483633,0)
+Gui.F_Display.lbl1.Parent("frmSearch")
+Gui.F_Display.txtDevModel.Create(TextBox,"",True,1050,300,0,60,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Display.txtDevModel.Parent("frmSearch")
+Gui.F_Display.txtSrcCode.Create(TextBox,"",True,1050,300,0,1215,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Display.txtSrcCode.Parent("frmSearch")
+Gui.F_Display.lbl2.Create(Label,"Source Code",True,1095,255,0,1215,225,True,2,"Arial",8,-2147483633,0)
+Gui.F_Display.lbl2.Parent("frmSearch")
+Gui.F_Display.txtSeriaNumber.Create(TextBox,"",True,1425,300,0,3495,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Display.txtSeriaNumber.Parent("frmSearch")
+Gui.F_Display.lbl3.Create(Label,"Serial Number",True,1425,255,0,3495,225,True,2,"Arial",8,-2147483633,0)
+Gui.F_Display.lbl3.Parent("frmSearch")
+Gui.F_Display.txtBin.Create(TextBox,"",True,1050,300,0,2355,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Display.txtBin.Parent("frmSearch")
+Gui.F_Display.lbl4.Create(Label,"Bin",True,1050,255,0,2370,225,True,2,"Arial",8,-2147483633,0)
+Gui.F_Display.lbl4.Parent("frmSearch")
+Gui.F_Display.cmd_SO_INV.Create(Button)
+Gui.F_Display.cmd_SO_INV.Size(855,375)
+Gui.F_Display.cmd_SO_INV.Position(150,810)
+Gui.F_Display.cmd_SO_INV.Parent("frmSearch")
+Gui.F_Display.cmd_SO_INV.Caption("SO/INV")
+Gui.F_Display.cmd_SO_INV.Event(Click,cmd_SO_INV_Click)
+Gui.F_Display.cmd_PL.Create(Button)
+Gui.F_Display.cmd_PL.Size(855,375)
+Gui.F_Display.cmd_PL.Position(1320,810)
+Gui.F_Display.cmd_PL.Parent("frmSearch")
+Gui.F_Display.cmd_PL.Caption("PL")
+Gui.F_Display.cmd_PL.Event(Click,cmd_PL_Click)
+Gui.F_Display.cmd_Load_All.Create(Button)
+Gui.F_Display.cmd_Load_All.Size(855,375)
+Gui.F_Display.cmd_Load_All.Position(2475,810)
+Gui.F_Display.cmd_Load_All.Parent("frmSearch")
+Gui.F_Display.cmd_Load_All.Caption("Load All")
+Gui.F_Display.cmd_Load_All.Event(Click,cmd_Load_All_Click)
+Gui.F_Display.cmd_Load_Selected.Create(Button)
+Gui.F_Display.cmd_Load_Selected.Size(1365,375)
+Gui.F_Display.cmd_Load_Selected.Position(3525,810)
+Gui.F_Display.cmd_Load_Selected.Parent("frmSearch")
+Gui.F_Display.cmd_Load_Selected.Caption("Load Selected")
+Gui.F_Display.cmd_Load_Selected.Event(Click,cmd_Load_Selected_Click)
+Gui.F_Display.cmd_History.Create(Button)
+Gui.F_Display.cmd_History.Size(1695,405)
+Gui.F_Display.cmd_History.Position(11535,930)
+Gui.F_Display.cmd_History.Caption("Item History")
+Gui.F_Display.cmd_History.Event(Click,cmd_History_Click)
+Gui.F_Display.cmd_History.Anchor(9)
+Gui.F_Display.GsGc_Display.Create(GsGridControl)
+Gui.F_Display.GsGc_Display.Size(13170,8100)
+Gui.F_Display.GsGc_Display.Position(75,1410)
+Gui.F_Display.GsGc_Display.Anchor(15)
+Gui.F_Display.GsGc_Display.Event(RowCellClick,CustomHistoryRowClick)
+Gui.F_Display.pbLoad.Create(ProgressBar)
+Gui.F_Display.pbLoad.Size(3735,255)
+Gui.F_Display.pbLoad.Position(9510,570)
+Gui.F_Display.pbLoad.Anchor(9)
+Gui.F_Display.frmEdit.Create(Frame)
+Gui.F_Display.frmEdit.Size(1710,480)
+Gui.F_Display.frmEdit.Position(11520,45)
+Gui.F_Display.frmEdit.Anchor(9)
+Gui.F_Display.optView.Create(Option)
+Gui.F_Display.optView.Size(810,255)
+Gui.F_Display.optView.Position(60,150)
+Gui.F_Display.optView.Parent("frmEdit")
+Gui.F_Display.optView.Caption("View")
+Gui.F_Display.optView.DefaultValue("1")
+Gui.F_Display.optView.Event(Click,optView_Click)
+Gui.F_Display.optEdit.Create(Option)
+Gui.F_Display.optEdit.Size(675,255)
+Gui.F_Display.optEdit.Position(960,150)
+Gui.F_Display.optEdit.Parent("frmEdit")
+Gui.F_Display.optEdit.Caption("Edit")
+Gui.F_Display.optEdit.Event(Click,optEdit_Click)
+Gui.F_History..Create
+Gui.F_History..Caption("Histoy")
+Gui.F_History..Size(12285,8460)
+Gui.F_History..MinX(0)
+Gui.F_History..MinY(0)
+Gui.F_History..Position(0,0)
+Gui.F_History..BackColor(-2147483633)
+Gui.F_History..MousePointer(0)
+Gui.F_History..Event(UnLoad,F_History_UnLoad)
+Gui.F_History.GsGc_History.Create(GsGridControl)
+Gui.F_History.GsGc_History.Size(11880,7275)
+Gui.F_History.GsGc_History.Position(90,495)
+Gui.F_History.GsGc_History.Anchor(15)
+Gui.F_History.GsGc_History.Event(RowCellClick,CustomHistoryRowClick)
+Gui.F_History.cmdRefreshHist.Create(Button)
+Gui.F_History.cmdRefreshHist.Size(855,375)
+Gui.F_History.cmdRefreshHist.Position(11085,45)
+Gui.F_History.cmdRefreshHist.Anchor(9)
+Gui.F_History.cmdRefreshHist.Caption("Refresh")
+Gui.F_History.cmdRefreshHist.Event(Click,cmdRefreshHist_Click)
+Gui.F_History.cmdClearHistFilter.Create(Button)
+Gui.F_History.cmdClearHistFilter.Size(855,375)
+Gui.F_History.cmdClearHistFilter.Position(10125,45)
+Gui.F_History.cmdClearHistFilter.Anchor(9)
+Gui.F_History.cmdClearHistFilter.Caption("Clear")
+Gui.F_History.cmdClearHistFilter.Event(Click,cmdClearHistFilter_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: Alejandro Anazco V.
+'11/14/2019
+'Programmed for CUSTOMER
+'Purpose: Purpose
+f.Intrinsic.Control.Try
+	'Creates Empty Display DT
+	f.Intrinsic.Control.CallSub(createDisplayDT)
+	'Creates Empty History DT
+	f.Intrinsic.Control.CallSub(createDisplayHistDT)
+	'Deserialize
+	f.Intrinsic.Control.CallSub(Deserialize)
+	'Load Grid Properties for Display
+	f.Intrinsic.Control.CallSub(loadGridProperties)
+	'Load Grid Properties for History
+	f.Intrinsic.Control.CallSub(loadPropertiesHistory)
+	'Load Dictionaries
+	f.Intrinsic.Control.CallSub(transactionCodeDictionary)
+	' Load History Table.
+	f.Intrinsic.Control.CallSub(loadHistory)
+	'Set Options
+	gui.F_Display.optView.Value(1)
+	'Set Context Menus
+	f.Intrinsic.Control.CallSub(SetContextMenus)
+	f.Intrinsic.Control.CallSub(SetContextHistMenus)
+	gui.F_Display..Show
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project ProjectName.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.cmd_SO_INV_Click.Start
+v.Local.sRet.Declare
+v.Local.sInvoice.Declare
+v.Local.sGauge.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.BlockEvents
+	f.ODBC.Connection!con.OpenCompanyConnection(999999)
+	 	f.Intrinsic.UI.Browser("Invoice", "con", "Select Invoice, Order_No, Customer, Date_Order from V_Order_Hist_Head", "Invoice*!*Order No*!*Customer*!*!Date Ordered", "70*!*70*!*70*!*70", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet.Trim, =,  "***CANCEL***")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Split(v.Local.sRet.Trim, "*!*", v.Local.sRet)
+	f.Intrinsic.String.LPad(v.Local.sRet(0).Trim, "0", 7,  v.Local.sInvoice)
+	
+	
+	f.Intrinsic.String.Build("Select Serial_Number from Item_History where Code_Transaction = 'O35' and Invoice = '{0}'", v.Local.sInvoice, v.Local.sSQL)
+	f.ODBC.Connection!con.OpenCompanyConnection(999999)
+	 	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sGauge)
+	f.ODBC.Connection!con.Close
+	
+	gui.F_Display.txtSeriaNumber.Text(v.Local.sGauge)
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_SO_INV_Click.End
+
+Program.Sub.cmd_PL_Click.Start
+v.Local.sRet.Declare
+v.Local.sFilter.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.BlockEvents
+	f.ODBC.Connection!con.OpenCompanyConnection(999999)
+	 	f.Intrinsic.UI.Browser("Product Line", "con", "Select Product_Line, Product_Line_DESC, Product_Line_Name from V_PRODUCT_LINE", "Product Line*!*Description*!*Name", "50*!*90*!*90", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet.Trim, =, "***CANCEL***")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'select * from "V_JOB_SERIAL" where job = '006569'
+	f.Intrinsic.Control.CallSub(cmd_Load_All_Click)
+	
+	f.Intrinsic.String.Build("Product_line = '{0}'", v.Local.sRet, v.Local.sFilter )
+	f.Data.DataView.SetFilter("displayDT", "displayDV", v.Local.sFilter)
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_PL_Click.End
+
+Program.Sub.cmd_Load_All_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.BlockEvents
+	Function.Intrinsic.Debug.InvokeDebugger
+	Function.Intrinsic.Debug.Stop
+	
+	f.Data.DataView.SetFilter("displayDT", "displayDV", "")
+	f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", "")
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.CreateFromSQL("tmpItemDT", "con", "Select Part, Location, Part+Location as Device_Model, Part+Location as Product_Line, Lot, Heat, Serial_Number, Bin, Quantity,  Part+Location as Description, Part+Location as HM_Flag,  Date_Last_Rec, user_field_1, user_field_2, user_field_3, user_field_4, Cert_Date, Serial_Number+Heat as SerialHeat from Item_Master")
+	 	f.Data.DataTable.CreateFromSQL("tmpDisplayItemUF_DT", "con", "Select * from GCG_5521_Item_UF")
+	f.ODBC.Connection!con.Close
+	
+	f.Data.DataTable.DeleteRow("displayDT")
+	f.Data.DataTable.AcceptChanges("displayDT")
+	f.Data.DataTable.Merge("tmpItemDT", "displayDT", false, 2)
+	f.Data.DataTable.Close("tmpItemDT")
+	
+	
+	f.Data.DataTable.DeleteRow("displayItemUF_DT")
+	f.Data.DataTable.AcceptChanges("displayItemUF_DT")
+	f.Data.DataTable.Merge("tmpDisplayItemUF_DT", "displayItemUF_DT", false, 2)
+	f.Data.DataTable.Close("tmpDisplayItemUF_DT")
+	
+	f.Intrinsic.Control.CallSub(loadHistory)
+	
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_Load_All_Click.End
+
+Program.Sub.cmd_Load_Selected_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.BlockEvents
+		f.Intrinsic.Control.CallSub(loadDisplay)
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_Load_Selected_Click.End
+
+Program.Sub.cmd_History_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.BlockEvents
+	f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", "")
+	gui.F_History..Visible(True)
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_History_Click.End
+
+Program.Sub.optView_Click.Start
+f.Intrinsic.Control.Try
+	gui.F_Display.pbLoad.Visible(true)
+	f.Intrinsic.Control.If(v.Screen.F_Display!optEdit.Value)
+		gui.F_Display.pbLoad.Value(0)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "ReadOnly", False)
+		
+		gui.F_Display.pbLoad.Value(25)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "AllowEdit", True)
+		
+		gui.F_Display.pbLoad.Value(50)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "ReadOnly", False)
+		
+		gui.F_Display.pbLoad.Value(75)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "AllowEdit", True)
+	f.Intrinsic.Control.Else
+		gui.F_Display.pbLoad.Value(0)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "ReadOnly", True)
+		
+		gui.F_Display.pbLoad.Value(25)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "AllowEdit", False)
+		
+		gui.F_Display.pbLoad.Value(50)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "ReadOnly", True)
+		
+		gui.F_Display.pbLoad.Value(75)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "AllowEdit", False)
+	f.Intrinsic.Control.EndIf
+	gui.F_Display.pbLoad.Value(100)
+	gui.F_Display.pbLoad.Visible(False)
+	gui.F_Display.pbLoad.Value(0)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optView_Click.End
+
+Program.Sub.optEdit_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_Display!optEdit.Value)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "ReadOnly", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "ReadOnly", False)
+			
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "AllowEdit", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "AllowEdit", True)
+		
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "ReadOnly", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "ReadOnly", False)
+		
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "AllowEdit", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "AllowEdit", True)
+	f.Intrinsic.Control.Else
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "ReadOnly", True)
+			
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "AllowEdit", False)
+		
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "ReadOnly", True)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "ReadOnly", True)
+		
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "AllowEdit", False)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optEdit_Click.End
+
+Program.Sub.F_Display_UnLoad.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.F_Display_UnLoad.End
+
+Program.Sub.F_History_UnLoad.Start
+f.Intrinsic.Control.Try
+	gui.F_History..Visible(False)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.F_History_UnLoad.End
+
+'****************************************************LOAD DATA
+Program.Sub.createDisplayDT.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("displayDT", true)
+	f.Data.DataTable.AddColumn("displayDT", "Part", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Location", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Device_Model", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Product_Line", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Lot", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Heat", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Serial_Number", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Bin", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Quantity", "Float")
+	f.Data.DataTable.AddColumn("displayDT", "Description", "String")
+	f.Data.DataTable.AddColumn("displayDT", "HM_Flag", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Date_Last_Rec", "String")
+	f.Data.DataTable.AddColumn("displayDT", "user_field_1", "String")
+	f.Data.DataTable.AddColumn("displayDT", "user_field_2", "String")
+	f.Data.DataTable.AddColumn("displayDT", "user_field_3", "String")
+	f.Data.DataTable.AddColumn("displayDT", "user_field_4", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Cert_Date", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Storage_Location", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Storage_comment", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Source_Transfer_Code", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Source_Status", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Part_Issued", "String")
+	f.Data.DataTable.AddColumn("displayDT", "request_status", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Intl_Flag", "String")
+	f.Data.DataTable.AddColumn("displayDT", "User_name", "String")
+	f.Data.DataTable.AddColumn("displayDT", "docLink", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Well", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Tray", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Slot", "String")
+	
+	f.Data.DataView.Create("displayDT", "displayDV", 22)
+	gui.F_Display.GsGc_Display.AddGridViewFromDataview("displayGV", "displayDT", "displayDV")
+	gui.F_Display.GsGc_Display.MainView("displayGV")
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.CreateFromSQL("displayItemUF_DT", "con", "Select * from GCG_5521_Item_UF", true)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayDT.End
+
+Program.Sub.createDisplayHistDT.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("displayHistDT", true)
+	f.Data.DataTable.AddColumn("displayHistDT", "Part", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Product_Line", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Device_Model", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Location", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Date_History", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Time_Item_History", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Job", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Suffix", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Sequence", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Lot", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Bin", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Heat", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Serial_Number", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Code_Transaction", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Quantity", "Float")
+	f.Data.DataTable.AddColumn("displayHistDT", "Order_No", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Order_Suffix", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Invoice", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Invoice_Sequence", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Purchase_Order", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "PO_Line", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Date_Action", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Program_Used", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "UserID", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Receiver", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "ShipTo", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Order_Line", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Invoice_Line", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "QTY_Dropped", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Cert_Date", "String")	
+	f.Data.DataTable.AddColumn("displayHistDT", "SerialHeat", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "KeyValue", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Reversed", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "User_Field_1", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "User_Field_2", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "User_Field_3", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "User_Field_4", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Storage_Location", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Storage_Comment", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Source_Transfer_Code", "String")
+	f.Data.DataTable.AddColumn("displayHistDT", "Source_Status", "String")
+	
+	f.Data.DataView.Create("displayHistDT", "displayHistDV", 22)
+	gui.F_History.GsGc_History.AddGridViewFromDataview("displayHistGV", "displayHistDT", "displayHistDV")
+	gui.F_History.GsGc_History.MainView("displayHistGV")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayHistDT.End
+
+Program.Sub.loadGridProperties.Start
+v.Local.iCnt.Declare
+v.Local.sFields.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Split(v.DataTable.displayDT.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+'		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+'		gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	gui.F_Display.GsGc_Display.BestFitColumns("displayGV")
+	'Caption
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Part", "Caption", "Part")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Device_Model", "Caption", "Device Model")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Location", "Caption", "Loc")	
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Product_line", "Caption", "PL")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Lot", "Caption", "Lot")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Description", "Caption", "Description")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "HM_Flag", "Caption", "HM Flag")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Bin", "Caption", "Bin")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Heat", "Caption", "Src Code")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Serial_Number", "Caption", "Src Serial")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "QUANTITY", "Caption", "Quantity")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Date_last_Rec", "Caption", "SrcRcvDate")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "user_field_1", "Caption", "NPS Mantissa")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Field_2", "Caption", "Measure Date")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "user_field_3", "Caption", "Leak Test Date")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Field_4", "Caption", "Activity")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Cert_date", "Caption", "Cert Date")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "docLink", "Caption", "Link")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "Caption", "StgLocation")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "Caption", "StgComment")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "Caption", "SrcTransferCode")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "Caption", "SrcStatusDate")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Part_Issued", "Caption", "Part Allocation")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Request_Status", "Caption", "Status")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Intl_Flag", "Caption", "Intl")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Name", "Caption", "User Name")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Well", "Caption", "Well")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Tray", "Caption", "Tray")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Slot", "Caption", "Slot")
+	
+	'Fixed
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Device_Model", "Fixed", "Left")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Heat", "Fixed", "Left")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Serial_Number", "Fixed", "Left")
+	
+	'Link Color
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Part", "CellForeColor", v.Color.LtBlue)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Serial_Number", "CellForeColor", v.Color.LtBlue)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "QUANTITY", "CellForeColor", v.Color.LtBlue)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Device_Model", "CellForeColor", v.Color.LtBlue)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Part_Issued", "CellForeColor", v.Color.LtBlue)
+	
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Field_2", "DisplayCustomDatetime", "d")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Field_3", "DisplayCustomDatetime", "d")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "User_Field_4", "DisplayCustomDatetime", "d")
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Date_Last_Rec", "DisplayCustomDatetime", "d")
+
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "ReadOnly", True)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "ReadOnly", True)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "ReadOnly", True)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "ReadOnly", True)
+		
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Location", "AllowEdit", false)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Storage_Comment", "AllowEdit", false)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Transfer_Code", "AllowEdit", false)
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "Source_Status", "AllowEdit", false)
+	
+	gui.F_Display.GsGc_Display.SetColumnProperty("displayGV", "docLink", "Icon", "DCS-OFF")
+	gui.F_Display.GsGc_Display.SetGridviewProperty("displayGV", "OptionsViewShowAutoFilterRow", true)
+	
+	gui.F_Display.GsGc_Display.BestFitColumns("displayGV")
+	gui.F_Display.GsGc_Display.SetGridviewProperty("displayGV", "OptionsViewColumnAutoWidth", false)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGridProperties.End
+
+Program.Sub.loadPropertiesHistory.Start
+v.Local.sFieldTitles.Declare
+v.Local.iCnt.Declare
+v.Local.iCntIndex.Declare(Long, 0)
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.String.Split(v.DataTable.displayHistDT.FieldNames, "*!*", v.Local.sFieldTitles)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFieldTitles.UBound, 1)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "HeaderFontBold", true)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "Visible", true)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "ReadOnly", true)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "AllowEdit", False)
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "CellHAlignment", "Near")
+'		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "HeaderForeColor", "White")
+'		gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", v.Local.sFieldTitles(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Date_History", "Caption", "Date History")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Time_Item_History", "Caption", "Time History")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Serial_Number", "Caption", "Src Serial")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Code_Transaction", "Caption", "Code Transaction")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Order_No", "Caption", "Order No")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Order_Suffix", "Caption", "Order Suffix")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Invoice_Sequence", "Caption", "Invoice Sequence")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Purchase_Order", "Caption", "Purchase Order")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "PO_Line", "Caption", "PO Line")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Date_Action", "Caption", "Date Action")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Program_Used", "Caption", "Program Used")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "UserID", "Caption", "User")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "ShipTo", "Caption", "Ship To")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Order_Line", "Caption", "Order Line")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Invoice_Line", "Caption", "Invoice Line")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Qty_Dropped", "Caption", "Qty Dropped")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Cert_Date", "Caption", "Cert Date")	
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "KeyValue", "Caption", "KeyValue")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Reversed", "Caption", "Reversed")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "User_Field_1", "Caption", "NPS Mantissa")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "User_Field_2", "Caption", "Measure Date")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "user_field_3", "Caption", "Leak Test Date")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "User_Field_4", "Caption", "Activity")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Location", "Caption", "StgLocation")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Storage_Comment", "Caption", "StgComment")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Transfer_Code", "Caption", "Src Transfer Code")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Source_Status", "Caption", "Src Status")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Product_line", "Caption", "PL")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Location", "Caption", "Location")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Heat", "Caption", "Src Code")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Part", "Caption", "Part")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Bin", "Caption", "Bin")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Quantity", "Caption", "Quantity")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Receiver", "Caption", "Date Last Rec")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Device_Model", "Caption", "Device Model")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Invoice", "Caption", "Invoice")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Job", "Caption", "Job")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Lot", "Caption", "Lot")	
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Suffix", "Caption", "Suffix")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Sequence", "Caption", "Sequence")
+	
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Device_Model", "Fixed", "Left")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Heat", "Fixed", "Left")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Serial_Number", "Fixed", "Left")
+
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Part", "CellForeColor", v.Color.LtBlue)
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Job", "CellForeColor", v.Color.LtBlue)
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Suffix", "CellForeColor", v.Color.LtBlue)
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Invoice", "CellForeColor", v.Color.LtBlue)
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Order_no", "CellForeColor", v.Color.LtBlue)
+	
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Date_History", "DisplayCustomDatetime", "d")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Date_Action", "DisplayCustomDatetime", "d")
+	gui.F_History.GsGc_History.SetColumnProperty("displayHistGV", "Cert_Date", "DisplayCustomDatetime", "d")
+	
+	gui.F_History.GsGc_History.BestFitColumns("displayHistGV")
+	gui.F_History.GsGc_History.SetGridviewProperty("displayHistGV", "OptionsViewColumnAutoWidth", false)
+	gui.F_History.GsGc_History.SetGridviewProperty("displayHistGV", "OptionsViewShowAutoFilterRow", true)
+	
+	gui.F_History.GsGc_History.AddStyleFormatCondition("displayHistGV", "Reversed", "reversedTag", "EQUAL", "R")
+	gui.F_History.GsGc_History.SetStyleFormatConditionProperty("displayHistGV", "Reversed", "reversedTag", "ApplyToRow", true)
+	gui.F_History.GsGc_History.SetStyleFormatConditionProperty("displayHistGV", "Reversed", "reversedTag", "backcolor", "Red")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadPropertiesHistory.End
+
+Program.Sub.loadHistory.Start
+f.Intrinsic.Control.Try
+	gui.F_Display.pbLoad.Visible(True)
+	gui.F_Display.pbLoad.Value(0)
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.CreateFromSQL("tmpDisplayHistDT", "con", "Select Part, Part+Location as Product_Line, Job as Device_Model, Location, Date_History, Time_Item_History, Job, Suffix, Sequence, Lot, Bin, Heat, Serial_Number, Code_Transaction, Quantity, Order_no, Order_Suffix, Invoice, Invoice_Sequence, Purchase_Order, PO_Line, Date_Action, Program_Used, UserID, Receiver, ShipTo, Order_Line, Invoice_Line, QTY_Dropped, Cert_Date, Serial_Number+Heat as SerialHeat,rtrim(Part)+rtrim(Location)+rtrim(date_history)+rtrim(time_Item_history) as KeyValue, reversed from ITEM_HISTORY where code_transaction in ('J52', 'O35', 'A10', 'J55', 'I40', 'I90') and Serial_Number <> ''")
+	 	'f.Data.DataTable.CreateFromSQL("tmpDisplayHistDT", "con", "Select Part, Part+Location as Product_Line, Part+Location as Device_Model, Location, Date_History, Time_Item_History, Job, Suffix, Sequence, Lot, Bin, Heat, Serial_Number, Code_Transaction, Quantity, Order_no, Order_Suffix, Invoice, Invoice_Sequence, Purchase_Order, PO_Line, Date_Action, Program_Used, UserID, Receiver, ShipTo, Order_Line, Invoice_Line, QTY_Dropped, Cert_Date, Serial_Number+Heat as SerialHeat,rtrim(Part)+rtrim(Location)+rtrim(date_history)+rtrim(time_Item_history) as KeyValue, reversed from ITEM_HISTORY where code_transaction in ('J52', 'O35', 'A10', 'J55', 'I40', 'I90') and Serial_Number <> ''")
+	 	'f.Data.DataTable.CreateFromSQL("tmpSerial", "con", "Select Job, Suffix, Serial_Start as Serial_number, Part, Quantity from Job_Serial where Serial_Start <> ''")
+	 	'f.Data.DataTable.CreateFromSQL("tmpSerial", "con", "Select Job, Suffix, Serial_Start as Serial_number, Part, Part_Loc as Location, Part+Part_Loc as Device_Model, Quantity from Job_Serial where Serial_Start not in (Select distinct Serial_Number from Item_History where Serial_Number <> '')")
+	 	f.Data.DataTable.CreateFromSQL("tmpSerial", "con", "Select Job, Suffix, Serial_Start as Serial_number, Part, Part_Loc as Location, Part+Part_Loc as Device_Model, Quantity from Job_Serial where Serial_Start not in (Select distinct Serial_Number from Item_History)")
+	 	f.Data.DataTable.CreateFromSQL("jobHeaderDT", "con", "Select Job, Part, Location, Part+location as Device_Model, Product_Line from job_header where suffix = '000' and date_closed = '000000' ")	 	
+	 	f.Data.Dictionary.CreateFromSQL("deviceDict", "con", "Select Part+Location as PartLocation, Description_2 from V_Inventory_Mst2 where Description_2 <> ''")
+	f.ODBC.Connection!con.Close
+	
+	f.Data.Dictionary.CreateFromDatatable("partDict", "jobHeaderDT", "Job", "Part")
+	f.Data.Dictionary.SetDefaultReturn("partDict", "")
+	f.Data.DataTable.FillFromDictionary("tmpSerial", "partDict", "Job", "Part")
+	f.Data.Dictionary.Close("partDict")
+	
+	f.Data.Dictionary.CreateFromDatatable("locationDict", "jobHeaderDT", "Job", "Location")
+	f.Data.Dictionary.SetDefaultReturn("locationDict", "")
+	f.Data.DataTable.FillFromDictionary("tmpSerial", "locationDict", "Job", "Location")
+	f.Data.Dictionary.Close("locationDict")
+	
+	f.Data.Dictionary.CreateFromDatatable("gaugeDict", "jobHeaderDT", "Job", "Device_Model")
+	f.Data.Dictionary.SetDefaultReturn("gaugeDict", "")
+	f.Data.DataTable.FillFromDictionary("tmpSerial", "gaugeDict", "Job", "Device_Model")
+	f.Data.Dictionary.Close("gaugeDict")
+	
+	f.Data.Dictionary.SetDefaultReturn("deviceDict", "")
+	f.Data.DataTable.FillFromDictionary("tmpSerial", "deviceDict", "Device_Model")
+	f.Data.Dictionary.Close("deviceDict")
+	
+'	f.Data.DataTable.AddColumn("tmpSerial", "Product_Line", "String")
+'	f.Data.Dictionary.CreateFromDatatable("plDict", "jobHeaderDT", "Job", "Product_Line")
+'	f.Data.Dictionary.SetDefaultReturn("plDict", "")
+'	f.Data.DataTable.FillFromDictionary("tmpSerial", "plDict", "Job", "Product_Line")
+'	f.Data.Dictionary.Close("plDict")
+	
+	f.Data.DataTable.Close("jobHeaderDT")
+	gui.F_Display.pbLoad.Value(25)
+	
+	f.Data.DataTable.AddColumn("tmpSerial", "Code_Transaction", "String", "Assigned")
+	f.Data.DataTable.Merge("tmpSerial", "tmpDisplayHistDT", true, 2)	
+	f.Data.DataTable.Close("tmpSerial")
+	gui.F_Display.pbLoad.Value(35)
+	
+	f.Data.DataTable.DeleteRow("displayHistDT")
+	f.Data.DataTable.AcceptChanges("displayHistDT")
+	gui.F_Display.pbLoad.Value(45)
+	
+	f.Data.DataTable.AcceptChanges("tmpDisplayHistDT")
+	f.Data.DataTable.Merge("tmpDisplayHistDT", "displayHistDT", true, 2)	
+	f.Data.DataTable.Close("tmpDisplayHistDT")	
+	gui.F_Display.pbLoad.Value(55)
+	'Create Dictionary
+	f.Intrinsic.Control.CallSub(applyDictionaries)
+	gui.F_Display.pbLoad.Value(100)
+	gui.F_Display.pbLoad.Visible(False)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadHistory.End
+
+Program.Sub.loadDisplay.Start
+v.Local.bCheck_1.Declare(Boolean, False)
+v.Local.sFilter.Declare
+v.Local.sText.Declare
+v.Local.iCase.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	f.Data.DataView.SetFilter("displayDT", "displayDV", "")
+	f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", "")
+	
+	gui.F_Display.pbLoad.Visible(True)
+	gui.F_Display.pbLoad.Value(0)
+	'Check the textbox is not empty
+	f.Intrinsic.Control.If(v.Screen.F_Display!txtDevModel.Text!FieldMapTrim, <>, "")
+		'Check if it has been previously marked as full.
+		f.Intrinsic.Control.If(v.Local.bCheck_1)
+			'If more than one textboxes are filled, show error message.
+			f.Intrinsic.UI.Msgbox("Multiple Search Criteria Filled. Please select just one.", "Error")
+			gui.F_Display.pbLoad.Visible(False)
+			gui.F_Display.pbLoad.Value(0)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			'Set the Text from textbox.
+			v.Local.sText.Set(v.Screen.F_Display!txtDevModel.Text!FieldMapTrim)
+			'Flag Textbox a full
+			v.Local.bCheck_1.Set(true)
+			'Set Case to 1 for specific SQL Query (Description_2)
+			v.Local.iCase.Set(1)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_Display.pbLoad.Value(5)
+	'Check the textbox is not empty
+	f.Intrinsic.Control.If(v.Screen.F_Display!txtSrcCode.Text!FieldMapTrim, <>, "")
+		'Check if it has been previously marked as full.
+		f.Intrinsic.Control.If(v.Local.bCheck_1)
+			'If more than one textboxes are filled, show error message.
+			f.Intrinsic.UI.Msgbox("Multiple Search Criteria Filled. Please select just one.", "Error")
+			gui.F_Display.pbLoad.Visible(False)
+			gui.F_Display.pbLoad.Value(0)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			'Set the Text from textbox.
+			v.Local.sText.Set(v.Screen.F_Display!txtSrcCode.Text!FieldMapTrim)
+			'Build Filter
+			f.Intrinsic.String.Build("Heat like '{0}'", v.Local.sText, v.Local.sFilter)
+			'Flag Textbox a full
+			v.Local.bCheck_1.Set(true)
+			'Set Case to 2 for SQL Query using Filter.
+			v.Local.iCase.Set(2)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_Display.pbLoad.Value(10)
+	'Check the textbox is not empty
+	f.Intrinsic.Control.If(v.Screen.F_Display!txtBin.Text!FieldMapTrim, <>, "")
+		'Check if it has been previously marked as full.
+		f.Intrinsic.Control.If(v.Local.bCheck_1)
+			'If more than one textboxes are filled, show error message.
+			f.Intrinsic.UI.Msgbox("Multiple Search Criteria Filled. Please select just one.", "Error")
+			gui.F_Display.pbLoad.Visible(False)
+			gui.F_Display.pbLoad.Value(0)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			'Set the Text from textbox.
+			v.Local.sText.Set(v.Screen.F_Display!txtBin.Text!FieldMapTrim)
+			'Build Filter
+			f.Intrinsic.String.Build("Bin like '{0}'", v.Local.sText, v.Local.sFilter)
+			'Flag Textbox a full
+			v.Local.bCheck_1.Set(true)
+			'Set Case to 2 for SQL Query using Filter.
+			v.Local.iCase.Set(2)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_Display.pbLoad.Value(15)
+	'Check the textbox is not empty
+	f.Intrinsic.Control.If(v.Screen.F_Display!txtSeriaNumber.Text!FieldMapTrim, <>, "")
+		'Check if it has been previously marked as full.
+		f.Intrinsic.Control.If(v.Local.bCheck_1)
+			'If more than one textboxes are filled, show error message.
+			f.Intrinsic.UI.Msgbox("Multiple Search Criteria Filled. Please select just one.", "Error")
+			gui.F_Display.pbLoad.Visible(False)
+			gui.F_Display.pbLoad.Value(0)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			'Set the Text from textbox.
+			v.Local.sText.Set(v.Screen.F_Display!txtSeriaNumber.Text!FieldMapTrim)
+			'Build Filter
+			f.Intrinsic.String.Build("Serial_Number like '{0}'", v.Local.sText, v.Local.sFilter)
+			'Flag Textbox a full
+			v.Local.bCheck_1.Set(true)
+			'Set Case to 2 for SQL Query using Filter.
+			v.Local.iCase.Set(2)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_Display.pbLoad.Value(20)
+	f.Intrinsic.Control.SelectCase(v.Local.iCase)
+		f.Intrinsic.Control.Case(1)
+			f.Intrinsic.String.Build("Select Part, Location, Part+Location as Device_Model, Part+Location as Product_Line, Lot, Heat, Serial_Number, Bin, Quantity,  Part+Location as Description, Part+Location as HM_Flag,  Date_Last_Rec, user_field_1, user_field_2, user_field_3, user_field_4, Cert_Date, Serial_Number+Heat as SerialHeat from Item_Master where Part in (Select distinct Part from V_Inventory_Mst2 where Description_2 like '{0}')", v.Local.sText, v.Local.sSQL)
+		f.Intrinsic.Control.Case(2)
+			f.Intrinsic.String.Build("Select Part, Location, Part+Location as Device_Model, Part+Location as Product_Line, Lot, Heat, Serial_Number, Bin, Quantity,  Part+Location as Description, Part+Location as HM_Flag,  Date_Last_Rec, user_field_1, user_field_2, user_field_3, user_field_4, Cert_Date, Serial_Number+Heat as SerialHeat from Item_Master where {0}", v.Local.sFilter, v.Local.sSQL)
+	f.Intrinsic.Control.EndSelect
+	
+	gui.F_Display.pbLoad.Value(25)
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	 	f.Data.DataTable.CreateFromSQL("tmpItemDT", "con", v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+	
+	gui.F_Display.pbLoad.Value(40)
+	f.Data.Linq.Join("LeftJoin", "datatable", "tmpItemDT*!*t", "datatable", "displayItemUF_DT*!*d", "t.Part = d.Part and t.location = d.location and t.heat = d.heat and t.serial_Number = d.serial_number", "t.Part*!*t.Location*!*t.Device_Model*!*t.Product_Line*!*t.Lot*!*t.Serial_Number*!*t.bin*!*t.Quantity*!*t.Description*!*t.HM_Flag*!*t.Date_Last_Rec*!*t.user_field_1*!*t.user_field_2*!*t.user_field_3*!*t.user_field_4*!*t.Cert_Date*!*t.heat*!*d.Storage_Location*!*d.Storage_comment*!*d.Source_Transfer_Code*!*d.Source_Status*!*d.Part_Issued*!*d.request_status*!*d.Intl_Flag*!*d.User_name", "", "", "", "tmpDisplayItemDT", true)
+	f.Data.DataTable.Close("tmpItemDT")
+	gui.F_Display.pbLoad.Value(60)
+	'Spliting Bin Column into 3
+	f.Data.DataTable.AddExpressionColumn("tmpDisplayItemDT", "Well", "String", "SUBSTRING(Bin, 1, 1)")
+	f.Data.DataTable.AddExpressionColumn("tmpDisplayItemDT", "Tray", "String", "SUBSTRING(Bin, 2, 1)")
+	f.Data.DataTable.AddExpressionColumn("tmpDisplayItemDT", "Slot", "String", "SUBSTRING(Bin, 3, 2)")
+	
+	f.Data.DataTable.DeleteRow("displayDT")
+	f.Data.DataTable.AcceptChanges("displayDT")
+	f.Data.DataTable.Merge("tmpDisplayItemDT", "displayDT", false, 2)
+	f.Data.DataTable.Close("tmpDisplayItemDT")
+	gui.F_Display.pbLoad.Value(70)
+	f.Intrinsic.Control.CallSub(applyDictionaries)
+	gui.F_Display.pbLoad.Value(100)
+	gui.F_Display.pbLoad.Visible(False)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadDisplay.End
+
+Program.Sub.CustomHistoryRowClick.Start
+v.Local.sParams.Declare
+v.Local.sPart.Declare
+v.Local.sLocation.Declare
+v.Local.sLot.Declare
+v.Local.sBin.Declare
+v.Local.s.Declare
+v.Local.sSerial.Declare
+v.Local.sJob.Declare
+v.Local.sSuffix.Declare
+v.Local.bEdit.Declare
+v.Local.sDataTable.Declare
+v.Local.sFilter.Declare
+v.Local.iID.Declare
+v.Local.iPiD.Declare
+v.Local.sRet.Declare
+v.Local.sInStatement.Declare
+v.Local.sRetSQL.Declare
+v.Local.sHeat.Declare
+v.Local.sSQL.Declare
+v.Local.sInvoice.Declare
+v.Local.sTemp.Declare
+v.Local.bOrderHist.Declare
+
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.BlockEvents
+	
+	f.Intrinsic.Control.If(v.Args.ControlName.UCase, =, "GSGC_DISPLAY")
+		v.Local.sDataTable.Set("displayDT")
+	f.Intrinsic.Control.ElseIf(v.Args.ControlName.UCase, =, "GSGC_HISTORY")
+		v.Local.sDataTable.Set("displayHistDT")
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.UnBlockEvents
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+		f.Intrinsic.Control.Case("PART")		
+			v.Local.sPart.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim)
+			v.Local.sLocation.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Location!FieldValTrim)
+			f.Intrinsic.String.Build("{0}!*!O!*!ZDR!*!ZDR!*!{1}!*!{2}", v.Caller.CompanyCode, v.Local.sPart, v.Local.sLocation, v.Local.sParams)
+			f.Global.General.CallWrapperSync(3500, v.Local.sParams)
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("JOB")
+			v.Local.sJob.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Job!FieldValTrim)
+			v.Local.sSuffix.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Suffix!FieldValTrim)
+			
+			'Edit
+			f.Intrinsic.Control.If(v.Screen.F_Display!optEdit.Value, =, "True")
+				f.Global.Security.CheckUserAccessIPM(527, 1, v.Local.bEdit)
+				f.Intrinsic.Control.If(v.Local.bEdit)
+					f.Intrinsic.String.Build("{0}!*!{1}!*!O", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+					f.Global.General.CallWrapperSync(2009, v.Local.sParams)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+					f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+				f.Intrinsic.Control.EndIf
+
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+				f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+			f.Intrinsic.Control.EndIf		
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("SUFFIX")
+			v.Local.sJob.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Job!FieldValTrim)
+			v.Local.sSuffix.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Suffix!FieldValTrim)
+			
+			'Edit
+			f.Intrinsic.Control.If(v.Screen.F_Display!optEdit.Value, =, "True")
+				f.Global.Security.CheckUserAccessIPM(527, 1, v.Local.bEdit)
+				f.Intrinsic.Control.If(v.Local.bEdit)
+					f.Intrinsic.String.Build("{0}!*!{1}!*!O", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+					f.Global.General.CallWrapperSync(2009, v.Local.sParams)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+					f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+				f.Intrinsic.Control.EndIf
+
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sJob, v.Local.sSuffix, v.Local.sParams)
+				f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+			f.Intrinsic.Control.EndIf		
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+		
+		f.Intrinsic.Control.Case("QTY_ONHAND")
+			v.Local.sPart.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim)
+			v.Local.sLocation.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Location!FieldValTrim)
+			f.Intrinsic.String.Build("{0}!*!{1}", v.Local.sPart, v.Local.sLocation, v.Local.sParams)
+			f.Global.General.CallWrapperSync(300010, v.Local.sParams)
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("QUANTITY")
+			v.Local.sPart.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim)
+			v.Local.sLocation.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Location!FieldValTrim)
+			f.Intrinsic.String.Build("{0}!*!{1}", v.Local.sPart, v.Local.sLocation, v.Local.sParams)
+			f.Global.General.CallWrapperSync(300010, v.Local.sParams)
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("SERIAL_NUMBER")
+			gui.F_Display.pbLoad.Visible(True)
+			gui.F_Display.pbLoad.Value(0)
+			
+			v.Local.sPart.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim)
+			v.Local.sSerial.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Serial_Number!FieldValTrim)
+			v.Local.sHeat.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Heat!FieldValTrim)
+'			gui.F_History.txtWU_Part.Text(v.Local.sPart)
+'			gui.F_History.txtWU_Serial.Text(v.Local.sSerial)
+			gui.F_Display.pbLoad.Value(10)
+			
+			f.ODBC.Connection!con.OpenCompanyConnection(999999)
+				'f.Intrinsic.String.Build("select distinct job from ITEM_HISTORY where serial_number like '{0}' and code_transaction = 'J52'", v.Local.sSerial,   v.Local.sSQL)
+				f.Intrinsic.String.Build("select distinct job from ITEM_HISTORY where serial_number like '{0}' and Rtrim(Job) <> ''", v.Local.sSerial,   v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRetSQL)
+				gui.F_Display.pbLoad.Value(20)
+				
+				f.Intrinsic.Control.If(v.Local.sRetSQL.Trim, =, "")
+					f.Intrinsic.Control.If(v.Local.sDataTable.Trim, =, "displayHistDT")
+						v.Local.sRetSQL.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Job!FieldValTrim)
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+				
+				f.Intrinsic.Control.If(v.Local.sRetSQL.Trim, <>, "")
+					f.Intrinsic.String.Replace(v.Local.sRetSQL, "#$#", "','", v.Local.sInStatement)
+					'f.Intrinsic.String.Build("select distinct Serial_Number from ITEM_HISTORY where code_transaction in ('J55', 'I40', 'O35', 'I90', 'I40', 'I90')  and Job in ('{0}')", v.Local.sInStatement, v.Local.sSQL)\
+					
+					'Maybe
+					f.Intrinsic.String.Build("select distinct Serial_Number from ITEM_HISTORY where  Job in ('{0}') union select distinct Serial_Number from Job_Serial where Job in ('{0}')", v.Local.sInStatement, v.Local.sSQL)
+					''
+					f.Intrinsic.String.Build("select distinct Serial_Number from ITEM_HISTORY where  Job in ('{0}')", v.Local.sInStatement, v.Local.sSQL)
+					f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRetSQL)
+					f.Intrinsic.String.Replace(v.Local.sRetSQL, "#$#", "','", v.Local.sInStatement)
+					
+					f.Intrinsic.String.Build("Serial_Number in ('{0}', '{1}')", v.Local.sSerial, v.Local.sInStatement, v.Local.sFilter)
+					'v.Global.sWhereUsedFilter.Set(v.Local.sFilter)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("Serial_Number = '{0}'", v.Local.sSerial, v.Local.sFilter)
+				f.Intrinsic.Control.EndIf				
+			f.ODBC.Connection!con.Close
+			gui.F_Display.pbLoad.Value(30)
+			
+			f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", v.Local.sFilter)
+			gui.F_Display.pbLoad.Value(60)
+			'v.Global.bWhereUsed.Set(True)
+			gui.F_History..Visible(true)
+			gui.F_Display.pbLoad.Value(100)
+			gui.F_Display.pbLoad.Visible(False)
+			f.Intrinsic.Control.UnBlockEvents
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("DEVICE_MODEL")
+			v.Local.sPart.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim)
+			v.Local.sSerial.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Serial_Number!FieldValTrim)
+	
+'				gui.F_History.txtWU_Part.Text(v.Local.sPart)
+'				gui.F_History.txtWU_Serial.Text(v.Local.sSerial)
+			
+			f.Intrinsic.Control.If(v.Local.sPart.Trim, <>, "")
+				f.Intrinsic.Control.If(v.Local.sFilter, =, "")
+					f.Intrinsic.String.Build("Part = '{0}'", v.Local.sPart, v.Local.sFilter)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("{0} and Part = '{1}'", v.Local.sFilter, v.Local.sPart, v.Local.sFilter)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Local.sSerial.Trim, <>, "")
+				f.Intrinsic.Control.If(v.Local.sFilter, =, "")
+					f.Intrinsic.String.Build("Serial_Number = '{0}'", v.Local.sSerial, v.Local.sFilter)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("{0} and Serial_Number = '{1}'", v.Local.sFilter, v.Local.sSerial, v.Local.sFilter)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			
+			f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", v.Local.sFilter)
+			'f.Intrinsic.String.Build("Part = '{0}' and Serial_Number = '{1}'", v.Local.sPart, v.Local.sSerial, v.Local.sFilter)
+			f.Data.DataView.ToDataTableDistinct("displayHistDT", "displayHistDV", "jobDT", "Job")
+				f.Data.DataView.Create("jobDT", "jobDV", 22)
+					f.Intrinsic.Control.If(v.DataTable.jobDT.RowCount, >, 0)
+						f.Data.DataView.ToString("jobDT", "jobDV", "Job", "*!*", "','", v.Local.sRet)
+						f.Intrinsic.String.Build("Job in ('{0}')", v.Local.sRet, v.Local.sFilter)
+					f.Intrinsic.Control.EndIf
+				f.Data.DataView.Close("jobDT", "jobDV")
+			f.Data.DataTable.Close("jobDT")
+			
+			f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", v.Local.sFilter)			
+			
+			'v.Global.bWhereUsed.Set(True)
+			f.Intrinsic.Control.UnBlockEvents
+			gui.F_History..Visible(True)
+			f.Intrinsic.Control.ExitSub
+			
+		f.Intrinsic.Control.Case("DOCLINK")				
+			f.Intrinsic.String.RPad(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Part!FieldValTrim, " ", 20, v.Local.sPart)
+			f.Intrinsic.String.RPad(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Location!FieldValTrim, " ", 2, v.Local.sLocation)
+			f.Intrinsic.String.RPad(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).LOT!FieldValTrim, " ", 15, v.Local.sLot)
+			f.Intrinsic.String.RPad(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Bin!FieldValTrim, " ", 6, v.Local.sBin)
+			f.Intrinsic.String.RPad(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Heat!FieldValTrim, " ", 2, v.Local.sHeat)
+			f.Intrinsic.String.RTrim(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Serial_Number!FieldValTrim, v.Local.sSerial)
+			
+			f.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}", v.Local.sPart, v.Local.sLocation, v.Local.sLot, v.Local.sBin, v.Local.sHeat, v.Local.sSerial, v.Local.sParams)
+			
+			f.Global.DocumentControl.GetLinkID(v.Local.sParams, 31, v.Local.iID)
+			f.Intrinsic.Control.If(v.Local.iID, >, -1)
+				f.Global.DocumentControl.Invoke(v.Local.sParams, 31, "Description", v.Local.iPiD)
+			f.Intrinsic.Control.EndIf			
+		f.Intrinsic.Control.Case("INVOICE")
+			v.Local.sInvoice.Set(v.DataTable.[v.Local.sDataTable](v.Args.RowIndex).Invoice!FieldValTrim)			
+			f.Intrinsic.Control.If(v.Local.sInvoice.Trim, =, "")
+				f.Intrinsic.Control.UnBlockEvents
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.String.Right(v.Local.sInvoice.Trim, 6, v.Local.sInvoice)
+			f.Data.DataTable.AddRow("200900", "InvNum", v.Local.sInvoice)
+			f.Intrinsic.Control.CallSub(200900Sync)
+			
+
+		f.Intrinsic.Control.Case("ORDER_NO")
+			f.Intrinsic.String.Build("Select Customer from V_Order_Header where Order_No = '{0}'", v.Args.CellValue.PSQLFriendly, v.Local.sSQL)
+			f.ODBC.Connection!con.OpenCompanyConnection(999999)	
+				f.Data.DataTable.CreateFromSQL("singleCustomer", "con", v.Local.sSQL)
+					f.Intrinsic.Control.If(v.DataTable.singleCustomer.RowCount, =, 1)
+						v.Local.sTemp.Set(v.DataTable.singleCustomer(0).Customer!FieldVal)
+					f.Intrinsic.Control.Else
+						f.Intrinsic.String.Build("Select distinct customer from V_ORDER_HIST_HEAD where Order_No = '{0}'", v.Args.CellValue.PSQLFriendly, v.Local.sSQL)
+						f.Data.DataTable.CreateFromSQL("orderHistDT", "con", v.Local.sSQL)
+						f.Intrinsic.Control.If(v.DataTable.orderHistDT.RowCount, =, 1)
+							v.Local.sTemp.Set(v.DataTable.orderHistDT(0).Customer!FieldValTrim)
+							v.Local.bOrderHist.Set(true)
+						f.Intrinsic.Control.EndIf
+						f.Data.DataTable.Close("orderHistDT")
+					f.Intrinsic.Control.EndIf
+				f.Data.DataTable.Close("singleCustomer")
+			f.ODBC.Connection!con.Close	
+	
+			f.Intrinsic.Control.If(v.Local.bOrderHist)
+				f.Intrinsic.String.Build("{0}!*!{1}", v.Args.CellValue.PSQLFriendly, v.Local.sTemp, v.Local.sParams)
+				f.Global.General.CallwrapperAsync(7070 , v.Local.sParams)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Control.If(v.Screen.F_JobHistory!optView.Value, =, "True")
+					f.Intrinsic.String.Build("{0}!*!V!*!{1}", v.Args.CellValue, v.Local.sTemp, v.Local.sParams)
+					f.Global.General.CallWrapperSync(200000, v.Local.sParams)
+				f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!optEdit.Value, =, "True")
+					f.Global.Security.CheckUserAccessIPM(527, 1, v.Local.bEdit)
+					f.Intrinsic.Control.If(v.Local.bEdit)
+						f.Intrinsic.String.Build("{0}!*!O!*!{1}", v.Args.CellValue, v.Local.sTemp, v.Local.sParams)
+						f.Global.General.CallWrapperSync(200000, v.Local.sParams)
+					f.Intrinsic.Control.EndIf	
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.UnBlockEvents			
+			f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndSelect
+	
+	f.Intrinsic.Control.UnBlockEvents	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CustomHistoryRowClick.End
+
+Program.Sub.transactionCodeDictionary.Start
+f.Intrinsic.Control.Try
+	'Create Dictionary for transaction codes.
+	f.Data.Dictionary.Create("codesDict")
+ 	f.Data.Dictionary.AddItem("codesDict", "J52", "WIP to Finished Goods")
+ 	f.Data.Dictionary.AddItem("codesDict", "J55", "Issue Material")
+ 	f.Data.Dictionary.AddItem("codesDict", "P10", "PO Receipts")
+ 	f.Data.Dictionary.AddItem("codesDict", "090", "Inventory Transfer: From Bin")
+ 	f.Data.Dictionary.AddItem("codesDict", "190", "Inventory Transfer: To Bin")
+	f.Data.Dictionary.AddItem("codesDict", "O35", "Invoice")
+	f.Data.Dictionary.AddItem("codesDict", "I90", "Allocate")
+	f.Data.Dictionary.AddItem("codesDict", "A10", "Stand Alone Issues and Receipts")	
+	f.Data.Dictionary.AddItem("codesDict", "P18", "Transactions: Inventory Parts or Update Inventory Cost")
+	f.Data.Dictionary.AddItem("codesDict", "I10", "Allocate")
+	f.Data.Dictionary.AddItem("codesDict", "I40", "Allocate")
+	
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "codesDict", "Code_Transaction")
+	f.Data.Dictionary.Close("codesDict")
+	
+	'Creating from SQL extra dictionaries needed.
+	f.ODBC.Connection!con.OpenCompanyConnection(999999)
+	 	f.Data.Dictionary.CreateFromSQL("histDeviceModel", "con", "select distinct A.Job, B.Description_2 from V_Item_History A left join V_inventory_Mst2 B on A.Part = B.Part and A.Location = B.Location where A.Job <> '' and B.Description_2 <> '';")
+	 	f.Data.Dictionary.CreateFromSQL("pl_Dictionary", "con", "Select Part+Location as Part, Product_Line from Inventory_Mstr")
+		f.Data.Dictionary.CreateFromSQL("gaugeModelDict", "con", "Select Part+Location as PartLocation, Description_2 from V_Inventory_Mst2")
+		f.Data.Dictionary.CreateFromSQL("hm_FlagDict", "con", "Select Part+Location as PartLocation, HM_Flag from V_Inventory_Mst3") 
+				
+		f.Data.Dictionary.CreateFromSQL("user1Dic", "con", "select rtrim(Part)+rtrim(Locn)+rtrim(key_date)+rtrim(key_time), usr_field_1 from item_hist_usr where usr_field_1 <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("user2Dic", "con", "select rtrim(Part)+rtrim(Locn)+rtrim(key_date)+rtrim(key_time), usr_field_2 from item_hist_usr where usr_field_2 <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("user3Dic", "con", "select rtrim(Part)+rtrim(Locn)+rtrim(key_date)+rtrim(key_time), usr_field_3 from item_hist_usr where usr_field_3 <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("user4Dic", "con", "select rtrim(Part)+rtrim(Locn)+rtrim(key_date)+rtrim(key_time), usr_field_4 from item_hist_usr where usr_field_4 <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("storageLocDic", "con", "select serial_number+heat as SerialHeat, Storage_Location from GCG_5521_ITEM_UF where Storage_Location <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("storageCommentDic", "con", "select serial_number+heat as SerialHeat, Storage_Comment from GCG_5521_ITEM_UF where Storage_Comment <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("sourceTransferDic", "con", "select serial_number+heat as SerialHeat, Source_Transfer_Code from GCG_5521_ITEM_UF where Source_Transfer_Code <> ''")
+	 	f.Data.Dictionary.CreateFromSQL("sourceStatusDic", "con", "select serial_number+heat as SerialHeat, Source_Status from GCG_5521_ITEM_UF where Source_Status <> ''")
+	f.ODBC.Connection!con.Close	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.transactionCodeDictionary.End
+
+Program.Sub.applyDictionaries.Start
+f.Intrinsic.Control.Try
+		'Filling from dictionary.
+	'f.Data.Dictionary.SetDefaultReturn("histDeviceModel", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "histDeviceModel", "Device_Model")
+	'f.Data.Dictionary.Close("histDeviceModel")
+
+ 	f.Data.Dictionary.SetDefaultReturn("pl_Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("displayDT", "pl_Dictionary", "Product_Line")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "pl_Dictionary", "Product_Line")
+	'f.Data.Dictionary.Close("pl_Dictionary")
+	
+	 f.Data.Dictionary.SetDefaultReturn("GaugeModelDict", "")
+	f.Data.DataTable.FillFromDictionary("displayDT", "GaugeModelDict", "Device_Model")
+	'f.Data.Dictionary.Close("GaugeModelDict")
+	
+	f.Data.Dictionary.SetDefaultReturn("HM_FlagDict", "")
+	f.Data.DataTable.FillFromDictionary("displayDT", "HM_FlagDict", "HM_Flag")
+	'f.Data.Dictionary.Close("HM_FlagDict")		
+	
+	f.Data.Dictionary.SetDefaultReturn("user1Dic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "user1Dic", "KeyValue", "user_field_1")
+	'f.Data.Dictionary.Close("user1Dic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("user2Dic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "user2Dic", "KeyValue", "user_field_2")
+	'f.Data.Dictionary.Close("user2Dic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("user3Dic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "user3Dic", "KeyValue", "user_field_3")
+	'f.Data.Dictionary.Close("user3Dic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("user4Dic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "user4Dic", "KeyValue", "user_field_4")
+	'f.Data.Dictionary.Close("user4Dic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("storageLocDic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "storageLocDic", "serialHeat", "Storage_Location")
+	'f.Data.Dictionary.Close("storageLocDic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("storageCommentDic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "storageCommentDic", "serialHeat", "Storage_Comment")
+	'f.Data.Dictionary.Close("storageCommentDic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("sourceTransferDic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "sourceTransferDic", "serialHeat", "Source_Transfer_Code")
+	'f.Data.Dictionary.Close("sourceTransferDic")	
+	
+	f.Data.Dictionary.SetDefaultReturn("sourceStatusDic", "")
+	f.Data.DataTable.FillFromDictionary("displayHistDT", "sourceStatusDic", "serialHeat", "Source_Status")
+	'f.Data.Dictionary.Close("sourceStatusDic")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.applyDictionaries.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.DataTable.displayItemDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.displayItemHistoryDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.F_Display.GsGc_Display.Serialize("displayGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "displayGV", 5521, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+gui.F_History.GsGc_History.Serialize("displayHistGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "displayHistGV", 55210, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "displayGV", 5521, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5521'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "displayGV", "5521", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_Display.GsGc_Display.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+	
+		f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "displayHistGV", 55210, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '55210'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "displayHistGV", "55210", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_History.GsGc_History.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SetContextMenus.Start
+v.Local.bEditSO.Declare	
+v.Local.bEditWO.Declare
+
+f.Intrinsic.Control.Try
+	gui.F_Display..ContextMenuCreate("ctxAll")
+	gui.F_Display.GsGc_Display.ContextMenuAttach("ctxAll")
+
+	gui.F_Display..ContextMenuAddItem("ctxAll", "Export", 0, "Export")
+	gui.F_Display..ContextMenuSetItemEventHandler("ctxAll", "Export", "MenuClickExport")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.SetContextHistMenus.Start
+v.Local.bEditSO.Declare	
+v.Local.bEditWO.Declare
+
+f.Intrinsic.Control.Try
+	gui.F_History..ContextMenuCreate("ctxHist")
+	gui.F_History.GsGc_History.ContextMenuAttach("ctxHist")
+	
+	gui.F_History..ContextMenuAddItem("ctxHist", "Export", 0, "Export")
+	gui.F_History..ContextMenuSetItemEventHandler("ctxHist", "Export", "MenuClickExport")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.SetContextHistMenus.End
+
+Program.Sub.MenuClickExport.Start
+v.Local.sFileExport.Declare
+v.Local.bExcel.Declare
+v.Local.bFileLocked.Declare
+v.Local.sForm.Declare
+v.Local.sMsg.Declare
+v.Local.sControl.Declare
+f.Intrinsic.Control.Try	
+
+	f.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		f.Intrinsic.Control.Case("CTXALL")
+			v.Local.sControl.Set("GsGc_Display")
+			v.Local.sForm.Set("F_Display")
+		f.Intrinsic.Control.Case("CTXHIST")
+			v.Local.sControl.Set("GsGc_History")
+			v.Local.sForm.Set("F_History")
+	f.Intrinsic.Control.EndSelect
+
+	f.Automation.MSExcel.CheckPresence(v.Local.bExcel)
+	f.Intrinsic.Control.If(v.Local.bExcel)
+		f.Intrinsic.String.Build("{0}GAB_5521_{1}_Export.xlsx", v.Caller.LocalGssTempDir, v.Local.sControl, v.Local.sFileExport)
+		f.Intrinsic.File.IsFileLocked(v.Local.sFileExport, v.Local.bFileLocked)
+		f.Intrinsic.Control.If(v.Local.bFileLocked)
+			f.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}", v.Ambient.NewLine, v.Local.sFileExport, v.Local.sMsg)
+			f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File In Use")
+		f.Intrinsic.Control.Else
+			Gui.[v.Local.sForm].[v.Local.sControl].Export(v.Local.sFileExport,"xlsx")
+			f.Intrinsic.Task.ShellExec(0, "", v.Local.sFileExport, "", "", 1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}GAB_5521_{1}_Export.csv", v.Caller.LocalGssTempDir, v.Local.sControl, v.Local.sFileExport)
+		f.Intrinsic.File.IsFileLocked(v.Local.sFileExport, v.Local.bFileLocked)
+		f.Intrinsic.Control.If(v.Local.bFileLocked)
+			f.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}", v.Ambient.NewLine, v.Local.sFileExport, v.Local.sMsg)
+			f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File In Use")
+		f.Intrinsic.Control.Else
+			Gui.[v.Local.sForm].[v.Local.sControl].Export(v.Local.sFileExport,"csv")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Task.ShellExec(0,"",v.Local.sFileExport,"","",1)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.cmdClearHistFilter_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.DataView.SetFilter("displayHistDT", "displayHistDV", "")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdClearHistFilter_Click.End
+
+Program.Sub.cmdRefreshHist_Click.Start
+v.Local.iRet.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.Msgbox("Do you wish to refresh History Data, process can take several minutes.", "Confirmation", 3, v.Local.iRet)
+	f.Intrinsic.Control.If(v.Local.iRet, =, 6)
+		f.Intrinsic.Control.CallSub(loadHistory)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdRefreshHist_Click.End
+
+
+
+
+
+
