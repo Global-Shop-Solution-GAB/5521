@@ -1,0 +1,18 @@
+/* ==========================================
+ * TABLE: GCG_5521_ITEM_UF
+ * ========================================== */
+CREATE TABLE "GCG_5521_ITEM_UF"(
+ "PART" CHAR(20) NOT NULL ,
+ "LOCATION" CHAR(2),
+ "SERIAL_NUMBER" CHAR(30),
+ "STORAGE_LOCATION" CHAR(60),
+ "STORAGE_COMMENT" CHAR(256),
+ "SOURCE_TRANSFER_CODE" CHAR(30),
+ "SOURCE_STATUS" CHAR(30),
+ "PART_ISSUED" CHAR(20),
+ "REQUEST_STATUS" CHAR(20),
+ "INTL_FLAG" BIT NOT NULL ,
+ "USER_NAME" CHAR(8),
+ "HEAT" CHAR(15));
+
+
